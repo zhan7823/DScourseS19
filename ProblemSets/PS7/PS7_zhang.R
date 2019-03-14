@@ -4,6 +4,7 @@ library(lattice)
 library(mice)
 library(gdata)
 library(Rcpp)
+library(tibble)
 
 
 df <- read.csv(file="C:/Users/james/Desktop/5253/wages.csv")
@@ -16,7 +17,8 @@ df2 <- df[complete.cases(df1), ]
 stargazer(df2)
 summary(df1)
 #model
-est <- lm(logwage ~ hgc + college + tenure + age + married , data=df2)
+df2 %>% mutate(tenure.sqUared = tenure^2)
+est <- lm(logwage ~ hgc + college + tenure + tenure^2 + age + married , data=df2)
 
 
 df1.1 <- df1
@@ -46,7 +48,7 @@ stargazer(est, est.mean, est1)
 #use mice 
 df1_mice <- df1
 df1_mice <- mice(df1, logwage = 12345)
-fit <- with(df1_mice, lm(logwage ~ hgc + college + tenure + age + married))
+fit <- with(df1_mice, lm(logwage ~ hgc + college + tenure+ tenure^2 + age + married))
 
 round(summary(pool(fit)),2)
 

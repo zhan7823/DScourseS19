@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{PS_9}
+\author{gameszhang }
+\date{April 2019}
+
+\begin{document}
+
+\
+PS9 
+
+
+\
+the dimension of training data is 405 450
+\section{LASSO}
+$\alpha=1$
+
+\
+$\lambda=0.0548$ 
+
+\
+RMSE= 0.2090472
+
+\
+out-of-sample RMSE = 0.0009195974
+
+\section{ridge regression model}
+$\alpha=0$
+\
+
+$\lambda=0.0769$
+
+\
+RMSE=0.1587585
+
+\
+out of sample RMSE = 0.0006500548
+
+\section{elastic net model}
+$\alpha=0.842$
+
+\
+$\lambda = 0.00169$
+
+\
+RMSE = 0.1636676
+
+\
+out of sample RMSE = 0.003807018
+
+\
+according to the optimal value of $\alpha$, we should use Ridge regress for this prediction task.
+
+\section{Question 9}
+we would not be able to estimate a simple linear regression model on the
+housing.train data frame since there is no regularization in OLS regression.
+
+\
+the lowest RMSE in Ridge is achieve our goal of any supervised machine learning algorithm, so we can determine that the Ridge is the best way for our prediction and it is in balance of the bias variance trade off.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

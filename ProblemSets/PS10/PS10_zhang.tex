@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage[super]{nth}
+\usepackage{threeparttable}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+\onehalfspacing
+
+\title{PS-10}
+
+\begin{document}
+
+
+
+
+\section{f1 score and G-measure}
+
+\begin{tabular}{c|cccccc}
+\hline\hline
+ & Tree & Logit & Neural Network & KNN & SVM & Naive \\ \hline
+$f1$ & 0.8958413 & 0.8977911 & 0.9061345 & 0.8959380 & 0.9044721 & 0.8843187 \\ \hline 
+$gmean$ & 0.6493149 & 0.6647632 & 0.7531308 & 0.7420789 & 0.7360211 & 0.7257874 \\ \hline 
+$out of sample$ & 0.08536773 & 0.2404422 &  0.03884539 & 0.02287732 & 0.02436546 & 0.009672962 \\ \hline
+\end{tabular}
+
+
+ 
+
+
+\end{document}
